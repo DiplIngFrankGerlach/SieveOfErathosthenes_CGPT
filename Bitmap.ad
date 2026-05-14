@@ -13,7 +13,9 @@ void setAll();
 
 void setBit(int idx);
 void clearBit(int idx);
-bool getBit(int idx);
+//manually changed
+//bool getBit(int idx);
+int getBit(int idx);
 
 int size();
 };

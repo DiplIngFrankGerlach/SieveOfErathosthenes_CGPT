@@ -9,8 +9,10 @@ main.o \
 ProjektCPP.o \
 mapping.o \
 AppMain.o \
+Bitmap.o \
 determineStackMemoryNeeds.o \
 determStackMemory_AppMain.ai.o \
+determStackMemory_Bitmap.ai.o \
 determStackMemory_Strings.ai.o \
 determStackMemory_System.ai.o \
 determStackMemory_ZKNuetzlich.ai.o \
@@ -19,9 +21,13 @@ placementNewClass_AlphaEntry.o \
 placementNewClass_Assigner_String_128.o \
 placementNewClass_Assigner_String_16.o \
 placementNewClass_Benutzer_Umschalter.o \
+placementNewClass_Bitmap.o \
 placementNewClass_CommandlineArgs.o \
 placementNewClass_Compare_String_128.o \
 placementNewClass_Compare_String_16.o \
+placementNewClass_Hash_String_128.o \
+placementNewClass_Hash_String_16.o \
+placementNewClass_Hashable4.o \
 placementNewClass_HexPrinter.o \
 placementNewClass_Input.o \
 placementNewClass_KeyType4.o \
@@ -45,10 +51,11 @@ placementNewClass_ThreadInfo.o \
 placementNewClass_ThreadLocalStorage.o \
 placementNewClass_ThreadLocalStorageEntry.o \
 placementNewClass_ThreadLocalStorageList.o \
+placementNewClass_Umgebung.o \
 placementNewClass_ZKNuetzlich.o \
 Strings.o \
 System.o \
-ZKNuetzlich.o \
+ZKNuetzlich.o 
 
 CC = gcc
 HOMEDIR=/Users/fg
@@ -70,7 +77,7 @@ MISC_OPT=-DSPR_USE_PTHREAD_MUTEX_LOCKS=1 -DLINUX_SAPPEUR=1 -DSPR_DEBUG=1 -DSPR_P
 
 
 all:$(OBJECTS)
-	$(CC) $(OPT) $(MISC_OPT) -o helloworld $^ $(LDLIBS)
+	$(CC) $(OPT) $(MISC_OPT) -o SieveErathostenesCGPT $^ $(LDLIBS)
 	
 clean:
-	rm *.o gauss2 
+	rm *.o SieveErathostenesCGPT

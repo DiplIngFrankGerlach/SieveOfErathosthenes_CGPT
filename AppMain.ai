@@ -2,15 +2,38 @@ Import
 {
   "Strings.ad",
   "System.ad",
+  "Bitmap.ad",
   "AppMain.ad"
 }
 
 int Main::main()
 { 
    var PrintfClass pfc;
+   var int N=10000000;
+   var Bitmap bm(N);
 
-   pfc.fstr("Hello World").pr();
-
+   for(var int i=0; i < N; i++)
+   {
+      var int im3 = i % 3;
+      if( im3 == 0)
+      {
+        bm.setBit(i);
+      } 
+   }
+   for(var int i=0; i < N; i++)
+   {
+      var int im3 = i % 3;
+      if( im3 == 0)
+      {
+        if(bm.getBit(i) != 1)
+        { pfc.fstr("FEHLER").pr(); }
+      } 
+      else
+      {
+        if(bm.getBit(i) != 0)
+        { pfc.fstr("FEHLER2 $").sa(i).pr(); }
+      }
+   }
    return 1;
 }
 
