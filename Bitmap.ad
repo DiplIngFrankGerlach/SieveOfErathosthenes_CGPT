@@ -1,0 +1,19 @@
+class Bitmap
+{
+int _bitCount;
+int _intCount;
+*int _data[];
+
+methods:
+Bitmap(int bits);
+~Bitmap();
+
+void clearAll();
+void setAll();
+
+void setBit(int idx);
+void clearBit(int idx);
+bool getBit(int idx);
+
+int size();
+};

@@ -1,0 +1,74 @@
+Bitmap::Bitmap(int bits)
+{
+   _bitCount = bits;
+
+   // ceil(bits / 32)
+   _intCount = (bits + 31) / 32;
+
+   _data = new int[_intCount];
+
+   this.clearAll();
+}
+
+Bitmap::~Bitmap()
+{
+   // reference counted runtime handles cleanup
+}
+
+void Bitmap::clearAll()
+{
+   for(var int i=0; i < _intCount; i++)
+   {
+      _data[i] = 0;
+   }
+}
+
+void Bitmap::setAll()
+{
+   for(var int i=0; i < _intCount; i++)
+   {
+      _data[i] = -1;
+   }
+
+   // clear unused upper bits in last integer
+   var int rest = _bitCount % 32;
+
+   if(rest != 0)
+   {
+      var int mask = (1 << rest) - 1;
+      _data[_intCount - 1] = mask;
+   }
+}
+
+void Bitmap::setBit(int idx)
+{
+   var int arrayIdx = idx >> 5;
+   var int bitIdx = idx & 31;
+
+   _data[arrayIdx] =
+      _data[arrayIdx] | (1 << bitIdx);
+}
+
+void Bitmap::clearBit(int idx)
+{
+   var int arrayIdx = idx >> 5;
+   var int bitIdx = idx & 31;
+
+   _data[arrayIdx] =
+      _data[arrayIdx] & (~(1 << bitIdx));
+}
+
+bool Bitmap::getBit(int idx)
+{
+   var int arrayIdx = idx >> 5;
+   var int bitIdx = idx & 31;
+
+   return
+      (_data[arrayIdx] & (1 << bitIdx))
+      != 0;
+}
+
+int Bitmap::size()
+{
+   return _bitCount;
+}
