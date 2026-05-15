@@ -9,4 +9,6 @@ The following steps have been done:
 1.) Sappeur manual.pdf, Helloworld4.html and more sample source files have been
     uploaded to ChatGPT.
 
-2.) ChatGPT was asked to generate the central Bitmap data structure.
+2.) ChatGPT was asked to generate the central Bitmap data structure. Minor Modfications needed. See Source.
+
+3.) ChatGPT was asked to generate a Sieve of Erathostenes implementation with the Bitmap
