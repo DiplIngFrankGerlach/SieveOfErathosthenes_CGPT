@@ -1,0 +1,15 @@
+class PrimeSieve
+{
+Bitmap* _bitmap;
+int _maxNumber;
+
+methods:
+PrimeSieve(int maxNumber);
+~PrimeSieve();
+
+void runSieve();
+
+int isPrime(int n);
+
+static void printFirstNPrimes(int n);
+};

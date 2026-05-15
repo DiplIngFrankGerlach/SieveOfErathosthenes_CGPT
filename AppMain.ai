@@ -3,12 +3,15 @@ Import
   "Strings.ad",
   "System.ad",
   "Bitmap.ad",
+  "PrimeSieve.ad",
   "AppMain.ad"
 }
 
 int Main::main()
 { 
    var PrintfClass pfc;
+
+   /*
    var int N=10000000;
    var Bitmap bm(N);
 
@@ -34,6 +37,9 @@ int Main::main()
         { pfc.fstr("FEHLER2 $").sa(i).pr(); }
       }
    }
+   */
+   var PrimeSieve ps(1000000);
+   ps.printFirstNPrimes(10000);
    return 1;
 }
 

@@ -13,9 +13,12 @@ Bitmap.o \
 determineStackMemoryNeeds.o \
 determStackMemory_AppMain.ai.o \
 determStackMemory_Bitmap.ai.o \
+determStackMemory_Math.ai.o \
+determStackMemory_PrimeSieve.ai.o \
 determStackMemory_Strings.ai.o \
 determStackMemory_System.ai.o \
 determStackMemory_ZKNuetzlich.ai.o \
+Math.o \
 placementNewClass_AlphabeticSorter.o \
 placementNewClass_AlphaEntry.o \
 placementNewClass_Assigner_String_128.o \
@@ -25,6 +28,7 @@ placementNewClass_Bitmap.o \
 placementNewClass_CommandlineArgs.o \
 placementNewClass_Compare_String_128.o \
 placementNewClass_Compare_String_16.o \
+placementNewClass_Complex.o \
 placementNewClass_Hash_String_128.o \
 placementNewClass_Hash_String_16.o \
 placementNewClass_Hashable4.o \
@@ -32,12 +36,14 @@ placementNewClass_HexPrinter.o \
 placementNewClass_Input.o \
 placementNewClass_KeyType4.o \
 placementNewClass_Main.o \
+placementNewClass_Math.o \
 placementNewClass_MTSuperClass.o \
 placementNewClass_MultiThreadAdmin.o \
 placementNewClass_Mutex.o \
 placementNewClass_MutexInfo.o \
 placementNewClass_MyMath.o \
 placementNewClass_NullPtrClassSappeurInternal.o \
+placementNewClass_PrimeSieve.o \
 placementNewClass_PrintfClass.o \
 placementNewClass_Semaphore.o \
 placementNewClass_SemaphoreInfo.o \
@@ -53,6 +59,7 @@ placementNewClass_ThreadLocalStorageEntry.o \
 placementNewClass_ThreadLocalStorageList.o \
 placementNewClass_Umgebung.o \
 placementNewClass_ZKNuetzlich.o \
+PrimeSieve.o \
 Strings.o \
 System.o \
 ZKNuetzlich.o 

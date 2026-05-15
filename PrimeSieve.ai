@@ -1,0 +1,132 @@
+//Manually added:
+Import{
+       "Strings.ad",
+       "System.ad",
+       "Bitmap.ad",
+       "Math.ad",
+       "PrimeSieve.ad"}
+
+PrimeSieve::PrimeSieve(int maxNumber)
+{
+   _maxNumber = maxNumber;
+
+   // nur ungerade Zahlen >=3
+   var int oddCount = (maxNumber - 1) / 2;
+
+   _bitmap = new Bitmap(oddCount);
+}
+
+PrimeSieve::~PrimeSieve()
+{
+}
+
+
+
+void PrimeSieve::runSieve()
+{
+   //added:
+   var Math m;
+
+   //changed
+   //var int limit = cast(int,sqrt(_maxNumber));
+   var int limit = cast(int,m.wurzel(_maxNumber));
+
+   for(var int p=3; p <= limit; p = p + 2)
+   {
+      if(this.isPrime(p))
+      {
+         // starte bei p*p
+         var int start = p * p;
+
+         // nur ungerade Vielfache
+         var int step = p << 1;
+
+         for(var int multiple=start;
+             multiple <= _maxNumber;
+             multiple = multiple + step)
+         {
+            var int idx = (multiple - 3) >> 1;
+
+            _bitmap.setBit(idx);
+         }
+      }
+   }
+}
+
+
+//changed
+//bool PrimeSieve::isPrime(int n)
+int  PrimeSieve::isPrime(int n)
+{
+   if(n == 2)
+   {
+      //changed
+      return 1;
+   }
+
+   if(n < 2)
+   {
+      //changed
+      return 0;
+   }
+
+   //var added:
+   var int nAnd1 = n & 1;
+   if(nAnd1 == 0)
+   {
+      //changed
+      return 0;
+   }
+
+   var int idx = (n - 3) >> 1;
+
+   //changed
+   if(_bitmap.getBit(idx) == 0) {return 1;}
+   return 0;
+}
+
+
+
+void PrimeSieve::printFirstNPrimes(int n)
+{
+   var int estimate;
+   //added:
+   var Math m;
+
+   // grobe Obergrenze
+   if(n < 6)
+   {
+      estimate = 15;
+   }
+   else
+   {
+      // n * log(n) * 1.3
+      estimate = cast(int, cast(double,n) * m.log(cast(double,n)) * 1.3);
+   }
+
+   var PrimeSieve ps(estimate);
+
+   ps.runSieve();
+
+   var PrintfClass pfc;
+
+   var int count = 0;
+
+   if(n >= 1)
+   {
+      pfc.fstr("$").sa(2).pr();
+      count = 1;
+   }
+
+   for(var int x=3;
+       (x <= estimate) && (count < n);
+       x = x + 2)
+   {
+      if(ps.isPrime(x))
+      {
+         pfc.fstr("$").sa(x).pr();
+
+         count = count + 1;
+      }
+   }
+}
