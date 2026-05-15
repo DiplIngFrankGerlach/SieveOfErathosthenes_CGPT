@@ -8,7 +8,7 @@ This project analyzes how well ChatGPT can write useful Sappeur code.
 
 Sappeur Version 4.x
 
-Software Engineer: Frank Gerlach, Brackenheim
+Software Engineer: Frank Gerlach, Brackenheim, Germany
 
 The following steps have been done:
 
