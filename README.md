@@ -1,4 +1,6 @@
-# Sieve Of Erathostenes written by ChatGPT 
+# Sieve Of Eratosthenes written by ChatGPT 
+
+Wikipedia: https://de.wikipedia.org/wiki/Sieb_des_Eratosthenes#
 
 AI Version:(OpenAI’s GPT-5.5), 14.05.2026
 
@@ -20,3 +22,9 @@ The following steps have been done:
 3.2) Minor syntactial adjustments to Sappeur werde made to achieve compile.
 
 4.) Successfully computed first 10000 primes.
+
+## Bottom Line
+
+ChatGPT can learn Sappeur syntax and semantics to an impressive degree. It can successfully
+parrot the algorithm in a "new" language. This is similar to a junior developer porting
+an algorithm to a novel language.
